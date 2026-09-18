@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "false-witness-research"
+version = "0.1.0"
+description = "Auditable relational-binding interventions for random-function transformers"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.1", "numpy>=1.24", "scipy>=1.10", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["fw*"]

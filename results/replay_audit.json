@@ -1,0 +1,10 @@
+{
+  "seed_11_balanced_checkpoint_replay": "exact paired-stat match",
+  "seed_11_cube_recalculation": "exact saved-probability/margin-stat match",
+  "seed_29_balanced_checkpoint_replay": "exact paired-stat match",
+  "seed_29_cube_recalculation": "exact saved-probability/margin-stat match",
+  "seed_47_balanced_checkpoint_replay": "exact paired-stat match",
+  "seed_47_cube_recalculation": "exact saved-probability/margin-stat match",
+  "published_data_zip": "all six files byte-identical to local source tables/manifest",
+  "tables_zip_git_blob_sha": "ac59185fb999f40111f1cfe59024728f51c9e35a"
+}
