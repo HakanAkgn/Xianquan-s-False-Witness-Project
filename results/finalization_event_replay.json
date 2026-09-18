@@ -1,0 +1,135 @@
+{
+  "basis_commit": "bda185e70ac45712463ed80f7f8e059bdcbf70ac",
+  "event_file_git_blob_sha": "943d13713f41cc5bd86f88b7bf174725eaedd791",
+  "event_file_sha256": "da6990e5fbbaf97bfa5ee7c51bd7bae291fa95fcf7fafa1817b66a404d598191",
+  "scope": "Independent arithmetic replay of public event codes; not model inference or training",
+  "interval_scope": "Normal paired sampling interval for each fixed model; not a training-seed interval",
+  "checkpoint_updates": 2000,
+  "evaluation_seed": 418729,
+  "models": {
+    "11": {
+      "n": 4096,
+      "suggested_answer_counts_by_condition": {
+        "control": 3594,
+        "employee_edit_only": 3638,
+        "unused_company_edit_only": 3556,
+        "balanced": 3626
+      },
+      "correct_answer_counts_by_condition": {
+        "control": 143,
+        "employee_edit_only": 129,
+        "unused_company_edit_only": 146,
+        "balanced": 129
+      },
+      "control_following_percent": 87.744140625,
+      "balanced_following_percent": 88.525390625,
+      "effect_percentage_points": 0.78125,
+      "paired_normal_95_percent_interval_points": [
+        0.21957257663738255,
+        1.3429274233626176
+      ],
+      "gained_suggested_answer": 85,
+      "lost_suggested_answer": 53,
+      "control_to_balanced_contingency_0_other_1_true_2_suggested": [
+        [
+          294,
+          7,
+          58
+        ],
+        [
+          5,
+          111,
+          27
+        ],
+        [
+          42,
+          11,
+          3541
+        ]
+      ]
+    },
+    "29": {
+      "n": 4096,
+      "suggested_answer_counts_by_condition": {
+        "control": 2076,
+        "employee_edit_only": 3700,
+        "unused_company_edit_only": 1966,
+        "balanced": 3695
+      },
+      "correct_answer_counts_by_condition": {
+        "control": 1055,
+        "employee_edit_only": 195,
+        "unused_company_edit_only": 1104,
+        "balanced": 192
+      },
+      "control_following_percent": 50.68359375,
+      "balanced_following_percent": 90.2099609375,
+      "effect_percentage_points": 39.5263671875,
+      "paired_normal_95_percent_interval_points": [
+        38.019784695871465,
+        41.032949679128535
+      ],
+      "gained_suggested_answer": 1625,
+      "lost_suggested_answer": 6,
+      "control_to_balanced_contingency_0_other_1_true_2_suggested": [
+        [
+          200,
+          3,
+          762
+        ],
+        [
+          3,
+          189,
+          863
+        ],
+        [
+          6,
+          0,
+          2070
+        ]
+      ]
+    },
+    "47": {
+      "n": 4096,
+      "suggested_answer_counts_by_condition": {
+        "control": 10,
+        "employee_edit_only": 12,
+        "unused_company_edit_only": 8,
+        "balanced": 13
+      },
+      "correct_answer_counts_by_condition": {
+        "control": 4080,
+        "employee_edit_only": 4078,
+        "unused_company_edit_only": 4084,
+        "balanced": 4078
+      },
+      "control_following_percent": 0.244140625,
+      "balanced_following_percent": 0.3173828125,
+      "effect_percentage_points": 0.0732421875,
+      "paired_normal_95_percent_interval_points": [
+        -0.033744740916401846,
+        0.18022911591640184
+      ],
+      "gained_suggested_answer": 4,
+      "lost_suggested_answer": 1,
+      "control_to_balanced_contingency_0_other_1_true_2_suggested": [
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          1,
+          4075,
+          4
+        ],
+        [
+          0,
+          1,
+          9
+        ]
+      ]
+    }
+  },
+  "equally_weighted_mean_effect_points": 13.460286458333334
+}
