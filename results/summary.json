@@ -1,0 +1,61 @@
+{
+  "balanced_2000_effect": {
+    "n_model_seeds": 3,
+    "mean": 0.13460286458333334,
+    "sample_sd": 0.22576663664062846,
+    "student_t_95ci": [
+      -0.4262325515506856,
+      0.6954382807173524
+    ],
+    "scope": "descriptive pilot interval across fixed model seeds; not example-level replication"
+  },
+  "iid_cube_robust_accuracy": {
+    "n_model_seeds": 3,
+    "mean": 0.37890625,
+    "sample_sd": 0.5379396991048782,
+    "student_t_95ci": [
+      -0.9574100431940531,
+      1.715222543194053
+    ],
+    "scope": "descriptive pilot interval across fixed model seeds; not example-level replication"
+  },
+  "augmentation_cube_robust_accuracy": {
+    "n_model_seeds": 3,
+    "mean": 0.8095703125,
+    "sample_sd": 0.3264568249136704,
+    "student_t_95ci": [
+      -0.0013933975263232812,
+      1.6205340225263232
+    ],
+    "scope": "descriptive pilot interval across fixed model seeds; not example-level replication"
+  },
+  "consistency_cube_robust_accuracy": {
+    "n_model_seeds": 3,
+    "mean": 0.814453125,
+    "sample_sd": 0.3188427958329776,
+    "student_t_95ci": [
+      0.022403711751389443,
+      1.6065025382486104
+    ],
+    "scope": "descriptive pilot interval across fixed model seeds; not example-level replication"
+  },
+  "status": {
+    "baseline_models": 6,
+    "baseline_checkpoints": 18,
+    "repair_runs": 9,
+    "complete_cube_evaluations": 18,
+    "source": "independent reconstruction; upstream code/checkpoints not found",
+    "typed_task": "underlearned; not evidence of high-competence binding failure"
+  },
+  "numerical_identity_checks": {
+    "trials": 1000,
+    "seed": 20260918,
+    "max_gradient_finite_difference_error": 2.2274015964995897e-11,
+    "max_softmax_mass_identity_error": 9.992007221626409e-16,
+    "max_factorial_identity_error": 8.881784197001252e-16,
+    "interpretation": "Numerical identity checks, not transformer predictions or novelty evidence"
+  },
+  "maximum_cube_parseval_error": 2.842170943040401e-14,
+  "minimum_cube_jensen_gain": 7.092849589726471e-10,
+  "raw_decision_audit": "passed for all three balanced 2,000-update checkpoints"
+}

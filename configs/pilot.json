@@ -1,0 +1,14 @@
+{
+  "seeds": [11, 29, 47],
+  "steps": 4000,
+  "checkpoints": [1000, 2000, 4000],
+  "batch_size": 128,
+  "learning_rate": 0.003,
+  "weight_decay": 0.01,
+  "evaluation_pairs": 4096,
+  "witness_counts": [1, 2, 4],
+  "tasks": {
+    "original": {"n": 8, "relations": 1, "layout": "legacy"},
+    "typed": {"n": 8, "relations": 2, "layout": "fixed"}
+  }
+}
