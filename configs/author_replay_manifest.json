@@ -1,0 +1,130 @@
+{
+  "scope": "figure1_table3_company_first_2000",
+  "origin": {
+    "kind": "author_release",
+    "locator": null,
+    "verification_note": null,
+    "archive": {
+      "path": null,
+      "sha256": null
+    }
+  },
+  "evaluation_inputs": {
+    "path": null,
+    "sha256": null
+  },
+  "models": [
+    {
+      "seed": 10,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 11,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 12,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 13,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 14,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 15,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 16,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    {
+      "seed": 17,
+      "updates": 2000,
+      "checkpoint": {
+        "path": null,
+        "sha256": null
+      },
+      "state_dict_key": null,
+      "key_map": null,
+      "reference_outputs": {
+        "path": null,
+        "sha256": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "all_eight_model_level_matches": false,
+  "extensions_allowed": false,
+  "interpretation": "Newly generated data. Not evidence for or against correctness of the original runs.",
+  "means": {
+    "control_following_pct": 15.0909423828125,
+    "effect_pp": 20.9869384765625,
+    "two_absent_accuracy_pct": 99.951171875,
+    "two_incorrect_accuracy_pct": 70.1385498046875,
+    "witness_following_pct": 36.077880859375
+  },
+  "missing": [
+    "author source and constructor draw order",
+    "author GPU training streams",
+    "author fixed evaluation arrays",
+    "author checkpoints and reference logits"
+  ],
+  "model_level_comparison": "diagnostic_comparison.csv",
+  "n_models": 8,
+  "status": "exact_author_reproduction_NOT_established",
+  "updates": 2000
+}

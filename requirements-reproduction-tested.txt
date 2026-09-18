@@ -1,0 +1,4 @@
+# Recorded diagnostic/test environment, NOT the author environment.
+torch==2.10.0
+numpy==2.3.5
+pytest==9.0.2
