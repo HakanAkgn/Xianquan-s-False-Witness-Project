@@ -6,6 +6,10 @@ This branch separates the earlier, non-matching pilot from a manuscript-aligned 
 
 **[Current status and complete comparison](docs/PAPER_REPRODUCTION_STATUS.md)** · [Author-archive requirements](docs/AUTHOR_ARCHIVE_CONTRACT.md) · [Baseline-first sequence](configs/replication_stages.json) · [Saved diagnostic results](reproduction_results/)
 
+## Continuation: 19 September 2026
+
+[Executed baseline verification](docs/BASELINE_VERIFICATION_2026_09_19.md) now checks all 32 Table 3 rows and the original Appendix F.1/F.3 identities using exact arithmetic. The recovered table counts give **27.4353% -> 54.8004%**, but these are reconstructed published values, **not newly reproduced model predictions**. The new verifier passes 26 tests. Model replay remains blocked by missing author artifacts; no extensions were run. See `reproduction/paper_checks.py` and `reproduction_results/paper_checks_20260919.json`.
+
 ## What changed
 
 The new `reproduction/` package uses 75% two-step questions, the native PyTorch encoder with identically initialized but independently trained layer clones, native attention initialization, seeds 10--17, and the Appendix D.2 rule excluding BOTH compared companies from every other employee row. Exact GELU, causal masks, the primary suffix layouts, and the first-layer access masks are tested explicitly.
