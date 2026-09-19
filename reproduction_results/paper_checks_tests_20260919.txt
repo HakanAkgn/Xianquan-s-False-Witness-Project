@@ -1,0 +1,31 @@
+test_ambiguous_percentage (test_paper_checks.Counts.test_ambiguous_percentage) ... ok
+test_bad_population (test_paper_checks.Counts.test_bad_population) ... ok
+test_bad_precision (test_paper_checks.Counts.test_bad_precision) ... ok
+test_full (test_paper_checks.Counts.test_full) ... ok
+test_impossible_percentage (test_paper_checks.Counts.test_impossible_percentage) ... ok
+test_inconsistent_effect_rejected (test_paper_checks.Counts.test_inconsistent_effect_rejected) ... ok
+test_negative_effect (test_paper_checks.Counts.test_negative_effect) ... ok
+test_negative_rate_rejected (test_paper_checks.Counts.test_negative_rate_rejected) ... ok
+test_quantization (test_paper_checks.Counts.test_quantization) ... ok
+test_table_all_32_rows (test_paper_checks.Counts.test_table_all_32_rows) ... ok
+test_table_duplicate_rejected (test_paper_checks.Counts.test_table_duplicate_rejected) ... ok
+test_unique_boundary_count_is_allowed (test_paper_checks.Counts.test_unique_boundary_count_is_allowed) ... ok
+test_zero (test_paper_checks.Counts.test_zero) ... ok
+test_absent_match_nonperfect_hint (test_paper_checks.Posterior.test_absent_match_nonperfect_hint) ... ok
+test_always_wrong_endpoint (test_paper_checks.Posterior.test_always_wrong_endpoint) ... ok
+test_always_wrong_hint_with_everyone_matching_is_undefined (test_paper_checks.Posterior.test_always_wrong_hint_with_everyone_matching_is_undefined) ... ok
+test_compositions_enumerate_without_duplicates (test_paper_checks.Posterior.test_compositions_enumerate_without_duplicates) ... ok
+test_country_collisions_are_aggregated (test_paper_checks.Posterior.test_country_collisions_are_aggregated) ... ok
+test_exact_tie (test_paper_checks.Posterior.test_exact_tie) ... ok
+test_float_alpha_rejected (test_paper_checks.Posterior.test_float_alpha_rejected) ... ok
+test_hand_calculation (test_paper_checks.Posterior.test_hand_calculation) ... ok
+test_invalid_maps_rejected (test_paper_checks.Posterior.test_invalid_maps_rejected) ... ok
+test_perfect_hint_is_point_mass (test_paper_checks.Posterior.test_perfect_hint_is_point_mass) ... ok
+test_perfect_hint_without_match_is_undefined (test_paper_checks.Posterior.test_perfect_hint_without_match_is_undefined) ... ok
+test_uninformative_hint (test_paper_checks.Posterior.test_uninformative_hint) ... ok
+test_validation_not_an_assert_statement (test_paper_checks.Posterior.test_validation_not_an_assert_statement) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.011s
+
+OK
