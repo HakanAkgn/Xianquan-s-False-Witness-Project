@@ -1,0 +1,59 @@
+{
+  "numerics": {
+    "author_gpu": "NVIDIA RTX A5000",
+    "author_torch": "2.6.0",
+    "canonical_eval_TF32": false,
+    "canonical_eval_fastpath": false,
+    "exact_GELU": true
+  },
+  "parameter_count": 69576,
+  "setting": {
+    "access": "usual",
+    "heads": 4,
+    "hidden": 128,
+    "hint_probability": 0.5,
+    "hint_reliability": 0.75,
+    "layers": 2,
+    "layout": "suggestion_last",
+    "n": 8,
+    "order": "company_first",
+    "two_step_probability": 0.75,
+    "width": 64
+  },
+  "source": "false_witnesses_v2.pdf Appendices C.1-C.4, D.2, H; retrieved text, original bytes unavailable",
+  "train": {
+    "batch_size": 128,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "global_gradient_clip": 1.0,
+    "gpu_stream_seed_offset": 35600,
+    "learning_rate": 0.003,
+    "one_step_probability": 0.25,
+    "primary_seeds": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "save_interventions_at": [
+      2000,
+      4000
+    ],
+    "two_step_probability": 0.75,
+    "updates": 4000,
+    "weight_decay": 0.01
+  },
+  "unverified": [
+    "author constructor call order",
+    "training RNG call order and CUDA streams",
+    "primary fixed evaluation arrays",
+    "author code and checkpoints"
+  ]
+}

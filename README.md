@@ -1,62 +1,53 @@
-# False Witness: token-balanced counterfactual experiments
+# False Witnesses: reproduce the paper before extending it
 
-**Independent implementation, executed pilot, and reproducibility package.** This repository extends the random-function framework described in *False Witnesses: When Irrelevant Facts Change Transformer Answers*. The original author repository and checkpoints were not found; this is **not** a fork or verified reproduction. See the [source audit](docs/SOURCE_AUDIT.md) for recovered settings and unverified implementation choices.
+**The paper has not yet been exactly reproduced. New extension runs are stopped.**
 
-## Read the results
+This branch separates the earlier, non-matching pilot from a manuscript-aligned baseline implementation and a strict author-artifact replay workflow. The first eight-model diagnostic was actually executed, but gives **15.0909% -> 36.0779%**, not the paper's **27.4% -> 54.8%**. A similar phenomenon is not an exact reproduction.
 
-[Executed research report](docs/RESULTS.md) · [All numerical summaries](results/) · [Original-format balanced construction](docs/BALANCED_ORIGINAL.md) · [Complete-cube analysis and proofs](docs/COUNTERFACTUAL_CUBES.md) · [Repair protocol](docs/REPAIR_PROTOCOL.md)
+**[Current status and complete comparison](docs/PAPER_REPRODUCTION_STATUS.md)** · [Author-archive requirements](docs/AUTHOR_ARCHIVE_CONTRACT.md) · [Baseline-first sequence](configs/replication_stages.json) · [Saved diagnostic results](reproduction_results/)
 
-At 2,000 updates, the token-balanced witness raises wrong-suggestion following by **0.7813, 39.5264 and 0.0732 percentage points** across seeds 11,29,47. IID no-hint accuracy is **99.9756%, 99.8291% and 100%**, respectively. The effect is heterogeneous, not an eight-model replication of the original caption.
+## Continuation: 19 September 2026
 
-Four independently movable witnesses form 16 contexts with identical tokens and country answers. In seed 29, **30.1873%** of nonconstant wrong-versus-correct logit-margin energy is higher-order; singleton-calibrated additive predictions perform worse than a constant baseline. This is an empirical interaction diagnostic, not a new Fourier theorem or a complete causal model.
+[Executed baseline verification](docs/BASELINE_VERIFICATION_2026_09_19.md) now checks all 32 Table 3 rows and the original Appendix F.1/F.3 identities using exact arithmetic. The recovered table counts give **27.4353% -> 54.8004%**, but these are reconstructed published values, **not newly reproduced model predictions**. The new verifier passes 26 tests. Model replay remains blocked by missing author artifacts; no extensions were run. See `reproduction/paper_checks.py` and `reproduction_results/paper_checks_20260919.json`.
 
-With matched extra updates and supervised contexts, one-witness counterfactual augmentation raises seed 29's incorrect-hint four-witness cube robustness from **6.0547% to 99.6094%**, compared with ordinary-data continuation. Other seeds and no-hint conditions show important differences and tradeoffs. Adding a consistency penalty is not uniformly better. The typed two-relation extension remains underlearned and is not evidence of high-competence binding failure.
+## What changed
 
-## Install and test
+The new `reproduction/` package uses 75% two-step questions, the native PyTorch encoder with identically initialized but independently trained layer clones, native attention initialization, seeds 10--17, and the Appendix D.2 rule excluding BOTH compared companies from every other employee row. Exact GELU, causal masks, the primary suffix layouts, and the first-layer access masks are tested explicitly.
 
-Tested: Python 3.13.5, PyTorch 2.10.0+cpu, NumPy 2.3.5, SciPy 1.17.0. The environment's installed CPU wheel reports a `+cpu` suffix. For the matching package release versions:
+It does **not** recover the author's original GPU random streams by reusing the same seed integers. The original source, checkpoints, fixed evaluation inputs and reference outputs are still missing. The local diagnostic used PyTorch 2.10.0 CPU; the manuscript reports PyTorch 2.6.0 on RTX A5000. Constructor/random-call order also remains unverified.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install 'torch==2.10.0' 'numpy==2.3.5' 'scipy==1.17.0'
-python -m pip install -e '.[test]'
-python -m pytest -q
-```
+## Commands
 
-The completed suite has **31 passing tests**. Other supported dependency versions may change numerical trajectories; exact percentages are not guaranteed across hardware or versions.
-
-## Reproduce
+Run from the repository root. The recorded diagnostic environment is listed in `requirements-reproduction-tested.txt`; those versions are not asserted to be the author's complete environment.
 
 ```bash
-# Entire fixed seed/checkpoint grid, controls, repair arms and summary tables:
-bash scripts/run_pilot.sh
+python -m pytest tests_reproduction -q
 
-# Or run one original-format model and its exact-token controls:
-python -m fw.run --task original --seed 29 --output outputs
-python -m fw.balanced outputs/original/seed_29/model_2000.pt \
-  --output outputs/original/seed_29/balanced_2000
-python -m fw.orbits outputs/original/seed_29/model_2000.pt \
-  --output outputs/original/seed_29/orbit_2000
+# Expected to exit with code 2 until real author artifacts are supplied.
+python -m reproduction.replay \
+  --manifest configs/author_replay_manifest.json \
+  --output reproduction_results/author_replay_status.json
 
-# Counterfactual training; use iid/augmentation/consistency as separate arms:
-python -m fw.repair outputs/original/seed_29/model_2000.pt \
-  --arm augmentation --output outputs/repair/augmentation/seed_29
+# Optional fresh-data diagnostic, NOT an exact author replication.
+# A new output directory is required; existing executions are never overwritten.
+python -m reproduction.diagnostic \
+  --output diagnostic_execution \
+  --workers 4 --acknowledge-regenerated-data
 
-# Aggregate after the entire grid exists; missing required runs fail explicitly:
-python -m fw.summarize --outputs outputs --destination results
-# A fresh clone stores the complete CSV grid in a compressed data archive:
-python -m zipfile -e results/tables.zip results
-python -m fw.plot --results results --destination results/figures
+# Independently replay all eight final outputs and seed 10's complete training stream.
+python -m reproduction.audit_diagnostic \
+  --root diagnostic_execution \
+  --output reproduction_results/internal_replay.json
 ```
 
-Defaults use CPU, one thread, no external model API and no paid service. Existing output paths are overwritten when rerun; copy an execution before changing its configuration. `torch.load(..., weights_only=False)` reads optimizer-containing local checkpoints: **load only trusted checkpoints**. Do not run this loader on an untrusted download.
+The replay verifier currently implements only the initial Figure 1/Table 3 comparison. Even a successful replay of that stage does not certify the entire manuscript, replay training, or unlock extensions. Remaining stages are enumerated explicitly, not silently declared complete. The supplied empty author manifest fails closed.
 
-## Files and evidence
+## Evidence retained
 
-`fw/data.py` provides random tables, original and typed interventions, exact token checks, and relevant changes. `fw/model.py` is the patchable two-layer transformer. `fw/evaluate.py` evaluates paired outcomes and all-head second-layer Q/K/V interventions. `fw/orbits.py` constructs complete cubes, decomposes response variance, and tests singleton-to-combination predictions. `fw/repair.py` performs compute-matched training comparisons.
+The eight CPU diagnostic models each received 2,000 updates with batch size 128. Evaluations at 0, 500, 1,000, 1,500 and 2,000 updates use common fixed diagnostic inputs. The execution archive retains all initialization/final checkpoints, final optimizer/RNG states, 2,048,000 ordered training examples, all saved output arrays and hashes. Git retains the compact comparison, summary and verification files; full plans, traces and artifact hashes are in the execution archive. These are **our diagnostic artifacts**, not author artifacts.
 
-`results/tables.zip` contains the complete CSV grid and input manifest, retaining every seed/checkpoint/arm, including small effects and underlearned models. `balanced_2000_event_audit.json` stores compact per-example events for the main balanced comparison; `fw.evaluate.unpack_outcomes` decodes them. Codes preserve correct/suggested-wrong/other status, not the identity of other answers. Full categorical outputs, probability/margin arrays, optimizer checkpoints and execution logs are retained in the accompanying execution archive and regenerated under `outputs/`; large binaries are not required in this Git repository.
+The new test suite has 37 passing tests. Replaying the eight final checkpoints reproduces all 294,912 checked classes and logits exactly. Replaying seed 10's 2,000 updates from its stored initial state and training stream reproduces its final weights bitwise. These establish internal reproducibility of this diagnostic, not agreement with the paper.
 
-The central balanced edit preserves **all person-country answers**, not every possible query about changed tables. Complete-cube robustness applies to the tested finite orbit, not all logically equivalent prompts. This pilot does not establish transfer to pretrained language models, mathematics, formal proofs, or a generally effective learned provenance mechanism. Scientific priority has not been exhaustively assessed.
+## Earlier pilot
+
+The previous `fw/`, `results/` and existing experiment documents remain unchanged. Its README is preserved in [docs/PILOT_README.md](docs/PILOT_README.md). That 50/50-task, independently initialized three-seed pilot must not be used as the paper baseline. Its extensions have **not** been rerun on the new baseline.

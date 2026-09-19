@@ -1,0 +1,8 @@
+{
+  "error_type": "ReplayBlocked",
+  "extensions_allowed": false,
+  "full_paper_reproduced": false,
+  "initial_comparison_replayed": false,
+  "reason": "Author source provenance has not been established",
+  "status": "blocked"
+}

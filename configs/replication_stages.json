@@ -1,0 +1,34 @@
+{
+  "extensions_allowed": false,
+  "full_paper_reproduced": false,
+  "stages": [
+    {
+      "stage": "figure1_initial_table3_group",
+      "status": "author_artifacts_missing; replay_adapter_implemented; corrected_CPU_diagnostic_disagrees"
+    },
+    {
+      "stage": "primary_32_models_nine_checkpoints",
+      "status": "not_reproduced"
+    },
+    {
+      "stage": "localized_Q_K_V_and_crossed_interventions_figures3_4_7",
+      "status": "not_reproduced"
+    },
+    {
+      "stage": "access_and_independent_information_controls_figure5",
+      "status": "not_reproduced"
+    },
+    {
+      "stage": "fixed_layout_reliability_long_training_figures2_6",
+      "status": "not_reproduced"
+    },
+    {
+      "stage": "appendix_additional_sizes_and_analytic_checks",
+      "status": "not_reproduced"
+    },
+    {
+      "stage": "same_setting_token_balanced_cubes_retraining_extensions",
+      "status": "not_run; blocked_on_baseline"
+    }
+  ]
+}
