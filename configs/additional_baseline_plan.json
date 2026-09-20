@@ -1,0 +1,20 @@
+{
+  "status": "additional baseline evaluations specified before their execution, after primary training; not external preregistration",
+  "defined_utc": "2026-09-20T02:25:16.650722+00:00",
+  "motivation": "Complete the paper controls relevant to interpreting token balance and first-layer value availability before the new interventions.",
+  "D1_D3": {
+    "checkpoint_group": "all 64 primary checkpoints",
+    "population": 4096,
+    "seed": 2026092010,
+    "conditions": ["base", "same-row employee control", "one witness", "same-row company control", "company-symbol repetition", "2 witnesses", "3 witnesses", "7 witnesses"]
+  },
+  "E6": {
+    "checkpoint_group": "all 64 access checkpoints",
+    "population": 2048,
+    "seed": 2026092011,
+    "conditions": ["base", "full donor", "queried employee V", "all employee V", "suggestion-matching employee V", "other employee V"],
+    "subsets": ["all", "four distinct original/replacement countries", "four distinct with matching employee"]
+  },
+  "limitations": ["New fixed inputs, not the author arrays.", "Independent-message training is not part of this addendum.", "Multiple-witness D1 edits preserve only the current target, unlike the later equal-function cubes."],
+  "source_sha256": "12612df1496e02f945596ad6f72dacdfab0dc7c64d2bab395bd43b22b581c2f2"
+}
